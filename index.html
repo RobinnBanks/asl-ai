@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ASL Translate AI</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+      body {
+        font-family: 'Inter', sans-serif;
+        background-color: #0d0d1a;
+      }
+      .gradient-text {
+        background-image: linear-gradient(to right, #4c51f6, #00c6ff, #4c52f6);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-size: 200% auto;
+        animation: text-shine 3s linear infinite;
+      }
+      .bg-gradient-hero {
+        background: linear-gradient(135deg, #0d0d1a 0%, #151525 100%);
+      }
+      .bg-gradient-button {
+          background-image: linear-gradient(to right, #4c52f6, #00c6ff);
+          transition: all 0.3s ease;
+      }
+      .bg-gradient-button:hover {
+          transform: translateY(-2px);
+          box-shadow: 0 10px 20px #4c52f666;
+      }
+      @keyframes text-shine {
+        to {
+          background-position: 200% center;
+        }
+      }
+      .card-shadow {
+        box-shadow: 0 10px 30px #00000033;
+        transition: transform 0.3s ease;
+      }
+      .card-shadow:hover {
+        transform: translateY(-5px);
+      }
+      .animate-pulse-slow {
+        animation: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+      }
+      @keyframes pulse {
+          0%, 100% {
+              opacity: 1;
+          }
+          50% {
+              opacity: .5;
+          }
+      }
+    </style>
+</head>
+<body class="text-gray-200">
+
+    <!-- Header -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-[#0d0d1a] bg-opacity-70 backdrop-blur-lg border-b border-gray-800">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold text-white tracking-wide">
+                ASL<span class="gradient-text">.ai</span>
+            </a>
+            <div class="hidden md:flex space-x-8">
+                <a href="#how-it-works" class="text-gray-400 hover:text-white transition duration-300">How It Works</a>
+                <a href="#translator" class="text-gray-400 hover:text-white transition duration-300">Translator</a>
+                <a href="#about" class="text-gray-400 hover:text-white transition duration-300">About</a>
+            </div>
+            <a href="#translator" class="hidden md:block px-6 py-2 rounded-full font-semibold bg-gradient-button text-white shadow-lg">
+                Try Now
+            </a>
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-button" class="md:hidden text-white focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+        </nav>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-[#0d0d1a] bg-opacity-90 backdrop-blur-md pb-4">
+            <a href="#how-it-works" class="block px-6 py-2 text-gray-400 hover:text-white border-t border-gray-800 transition duration-300">How It Works</a>
+            <a href="#translator" class="block px-6 py-2 text-gray-400 hover:text-white border-t border-gray-800 transition duration-300">Translator</a>
+            <a href="#about" class="block px-6 py-2 text-gray-400 hover:text-white border-t border-gray-800 transition duration-300">About</a>
+            <a href="#translator" class="block px-6 py-3 mt-2 mx-6 text-center rounded-full font-semibold bg-gradient-button text-white shadow-lg">
+                Try Now
+            </a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="bg-gradient-hero min-h-screen flex items-center justify-center text-center p-6 pt-24">
+        <div class="container mx-auto">
+            <h1 class="text-4xl sm:text-5xl lg:text-7xl font-extrabold text-white leading-tight mb-6 animate-pulse-slow">
+                Translate <span class="gradient-text">ASL</span> in Real-Time
+            </h1>
+            <p class="text-lg sm:text-xl lg:text-2xl text-gray-400 max-w-3xl mx-auto mb-10">
+                Bridge the communication gap with my AI-powered American Sign Language translator, built with a Teachable Machine model.
+            </p>
+            <a href="#translator" class="px-8 py-4 rounded-full text-lg font-semibold bg-gradient-button text-white shadow-xl">
+                Get Started
+            </a>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section id="how-it-works" class="py-24 bg-[#151525]">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl sm:text-4xl font-bold text-white mb-16">How It Works</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 max-w-5xl mx-auto">
+                <!-- Step 1 -->
+                <div class="p-8 rounded-2xl bg-[#1f1f33] card-shadow">
+                    <div class="w-16 h-16 mx-auto mb-6 flex items-center justify-center rounded-full bg-blue-500 text-white text-3xl font-bold">1</div>
+                    <h3 class="text-xl font-bold text-white mb-4">Connect Your Webcam</h3>
+                    <p class="text-gray-400">Grant permission to access your device's camera. My AI model will use this to see your signs.</p>
+                </div>
+                <!-- Step 2 -->
+                <div class="p-8 rounded-2xl bg-[#1f1f33] card-shadow">
+                    <div class="w-16 h-16 mx-auto mb-6 flex items-center justify-center rounded-full bg-blue-500 text-white text-3xl font-bold">2</div>
+                    <h3 class="text-xl font-bold text-white mb-4">Sign to the Camera</h3>
+                    <p class="text-gray-400">Perform a sign from our supported vocabulary. Our model processes your gestures.</p>
+                </div>
+                <!-- Step 3 -->
+                <div class="p-8 rounded-2xl bg-[#1f1f33] card-shadow">
+                    <div class="w-16 h-16 mx-auto mb-6 flex items-center justify-center rounded-full bg-blue-500 text-white text-3xl font-bold">3</div>
+                    <h3 class="text-xl font-bold text-white mb-4">Get the Translation</h3>
+                    <p class="text-gray-400">The translated word or phrase will appear on the screen in real-time.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Translator Section -->
+    <section id="translator" class="py-24 bg-[#0d0d1a]">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl sm:text-4xl font-bold text-white mb-16">Live ASL Translator</h2>
+            <div class="flex flex-col md:flex-row items-center justify-center space-y-8 md:space-y-0 md:space-x-12">
+                <!-- Webcam/Video Container -->
+                <div class="w-full md:w-1/2 lg:w-2/5 p-4 rounded-3xl bg-[#151525] card-shadow">
+                    <div id="webcam-container" class="relative overflow-hidden rounded-2xl aspect-video bg-gray-900 flex items-center justify-center">
+                        <div id="webcam-placeholder" class="text-gray-600 text-xl font-medium p-8 text-center">
+                            Click "Start Translation" to activate your camera.
+                        </div>
+                        <!-- Webcam feed will be displayed here -->
+                    </div>
+                </div>
+
+                <!-- Translation Output -->
+                <div class="w-full md:w-1/2 lg:w-2/5 p-6 rounded-3xl bg-[#151525] card-shadow">
+                    <h3 class="text-2xl font-bold text-white mb-4">Translation</h3>
+                    <div id="label-container" class="min-h-[150px] p-4 text-left rounded-xl bg-gray-900 border border-gray-700 text-gray-300 text-xl font-semibold overflow-auto">
+                        <!-- Predicted text will be displayed here -->
+                        <span class="text-gray-500">Translation will appear here...</span>
+                    </div>
+                    <button id="start-button" class="mt-8 w-full px-8 py-4 rounded-full text-lg font-semibold bg-gradient-button text-white shadow-xl transform transition-transform duration-300 hover:scale-105">
+                        Start Translation
+                    </button>
+                    <!-- Loading indicator when model is being loaded -->
+                    <div id="loading-indicator" class="mt-4 hidden text-blue-400 font-medium">
+                        Loading model...
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- About Section -->
+    <section id="about" class="py-24 bg-[#151525]">
+        <div class="container mx-auto px-6 text-center max-w-3xl">
+            <h2 class="text-3xl sm:text-4xl font-bold text-white mb-6">About the Project</h2>
+            <p class="text-gray-400 text-lg mb-8">
+                This project uses a custom machine learning model created with Google's Teachable Machine to translate American Sign Language (ASL). It's currently in it's prototype phase and can identify most of the ASL alphabet, and simple hand signs such as Hello, Thank you, Nice, I am, You, ILY(I Love You) and Hungry. My goal was to provide a seamless, real-time translation experience using just a standard webcam.
+            </p>
+            <a href="#" class="inline-block px-6 py-3 rounded-full text-lg font-semibold bg-gray-800 text-white border border-gray-700 transition duration-300 hover:bg-gray-700">
+                Learn More
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-[#0d0d1a] py-12 text-gray-400 text-center border-t border-gray-800">
+        <p class="text-sm">&copy; 2025 ASL.ai. All rights reserved.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest/dist/tf.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@latest/dist/teachablemachine-image.min.js"></script>
+    <script>
+        // JavaScript for mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // JavaScript for the Teachable Machine model integration
+        //
+        // You will need to replace the placeholder URL with the model URL
+        // you get from the "Export Model" panel in Teachable Machine.
+        //
+        // Example URL: const URL = "https://teachablemachine.withgoogle.com/models/xyz/";
+        //
+        const URL = "https://teachablemachine.withgoogle.com/models/iOd7JT0Ct/";
+        
+        let model, webcam, labelContainer, maxPredictions;
+
+        // Function to initialize the model and webcam
+        async function init() {
+            const modelURL = URL + "model.json";
+            const metadataURL = URL + "metadata.json";
+
+            document.getElementById('loading-indicator').classList.remove('hidden');
+            
+            try {
+                // Load the model and metadata
+                model = await tmImage.load(modelURL, metadataURL);
+                maxPredictions = model.getTotalClasses();
+
+                // Setup the webcam
+                const flip = true; // whether to flip the webcam
+                webcam = new tmImage.Webcam(200, 200, flip); // width, height, flip
+                await webcam.setup();
+                await webcam.play();
+
+                // Remove the placeholder text and add webcam canvas
+                document.getElementById('webcam-placeholder').style.display = 'none';
+                document.getElementById("webcam-container").appendChild(webcam.canvas);
+
+                labelContainer = document.getElementById("label-container");
+                // Clear any existing content and add a loading message
+                labelContainer.innerHTML = '<span class="text-blue-400">Ready to translate...</span>';
+
+                // Create a div for each class label
+                for (let i = 0; i < maxPredictions; i++) {
+                    labelContainer.appendChild(document.createElement("div"));
+                }
+                
+                // Start the prediction loop
+                window.requestAnimationFrame(loop);
+
+            } catch (error) {
+                console.error("Error loading model or webcam:", error);
+                document.getElementById('webcam-placeholder').innerText = "Error: Could not load model or access webcam. Please check your URL and permissions.";
+                document.getElementById('start-button').disabled = true;
+            } finally {
+                document.getElementById('loading-indicator').classList.add('hidden');
+            }
+        }
+
+        // The main prediction loop
+        async function loop() {
+            if (webcam) {
+              webcam.update(); // update the webcam frame
+              await predict();
+              window.requestAnimationFrame(loop);
+            }
+        }
+
+        // Run the webcam image through the image model
+        async function predict() {
+            // predict can take in an image, video or canvas html element
+            const prediction = await model.predict(webcam.canvas);
+            
+            // Update the display with the predictions
+            // This is a basic example; you could make this more sophisticated
+            // by only showing the class with the highest probability.
+            let highestPrediction = { className: '', probability: 0 };
+
+            for (let i = 0; i < maxPredictions; i++) {
+                const classPrediction = prediction[i].className + ": " + prediction[i].probability.toFixed(2);
+                if (prediction[i].probability > highestPrediction.probability) {
+                    highestPrediction = { className: prediction[i].className, probability: prediction[i].probability };
+                }
+            }
+
+            // Display only the class with the highest probability if it's over a certain threshold
+            if (highestPrediction.probability > 0.75) {
+                labelContainer.innerHTML = `<span class="text-white">${highestPrediction.className.toUpperCase()}</span>`;
+            } else {
+                labelContainer.innerHTML = `<span class="text-gray-500">Waiting for a sign...</span>`;
+            }
+        }
+
+        // Event listener for the start button
+        document.getElementById('start-button').addEventListener('click', () => {
+            init();
+            document.getElementById('start-button').classList.add('hidden');
+        });
+    </script>
+</body>
+</html>
